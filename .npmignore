@@ -1,0 +1,32 @@
+# Development files
+test-project/
+example/
+*.test.js
+test.js
+
+# Documentation for development
+DEMO.md
+QUICK_START.md
+
+# Git files
+.git
+.gitignore
+
+# Development dependencies
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+.env
+node_modules
+.git
+Backendify\vite-project

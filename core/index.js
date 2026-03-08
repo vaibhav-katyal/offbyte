@@ -1,0 +1,14 @@
+export { scanProject } from './scanner/scanProject.js';
+export { parseJS } from './parser/parseJS.js';
+export { parseTS } from './parser/parseTS.js';
+export { detectFetch } from './detector/detectFetch.js';
+export { detectAxios } from './detector/detectAxios.js';
+export { detectForms } from './detector/detectForms.js';
+export { detectSocket } from './detector/detectSocket.js';
+export { buildIRFromDetections } from './ir/buildIR.js';
+export { applyRuleEngine } from './rules/resourceRules.js';
+export { generateModels } from './generator/generateModels.js';
+export { generateControllers } from './generator/generateControllers.js';
+export { generateRoutes } from './generator/generateRoutes.js';
+export { generateServer } from './generator/generateServer.js';
+export { generateSocketBackend, generateServerWithSocket, addSocketDependencies } from './generator/generateSocket.js';

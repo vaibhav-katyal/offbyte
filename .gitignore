@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.local
+dist/
+build/
+*.log
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+package-lock.json
+yarn.lock
+
+test-frontend
+test-frontend-2

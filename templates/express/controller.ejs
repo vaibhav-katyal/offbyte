@@ -1,0 +1,26 @@
+import <%= modelName %> from '../models/<%= modelName %>.js';
+
+export const list<%= modelNamePlural %> = async (req, res) => {
+  const data = await <%= modelName %>.find();
+  res.json({ success: true, data });
+};
+
+export const get<%= modelName %> = async (req, res) => {
+  const data = await <%= modelName %>.findById(req.params.id);
+  res.json({ success: true, data });
+};
+
+export const create<%= modelName %> = async (req, res) => {
+  const data = await <%= modelName %>.create(req.body);
+  res.status(201).json({ success: true, data });
+};
+
+export const update<%= modelName %> = async (req, res) => {
+  const data = await <%= modelName %>.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  res.json({ success: true, data });
+};
+
+export const delete<%= modelName %> = async (req, res) => {
+  await <%= modelName %>.findByIdAndDelete(req.params.id);
+  res.json({ success: true });
+};
