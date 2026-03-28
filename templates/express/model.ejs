@@ -1,0 +1,9 @@
+import mongoose from 'mongoose';
+
+const <%= modelVar %>Schema = new mongoose.Schema({
+<% fields.forEach(function(field) { %>
+  <%= field.name %>: { type: <%= field.type %><%= field.required ? ', required: true' : '' %> },
+<% }); %>
+}, { timestamps: true });
+
+export default mongoose.model('<%= modelName %>', <%= modelVar %>Schema);
