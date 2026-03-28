@@ -24,7 +24,7 @@ function buildDefaultRailwayProjectName() {
     .replace(/[-:TZ]/g, '')
     .slice(0, 12);
 
-  return `offbyte-${stamp}`;
+  return `offbyt-${stamp}`;
 }
 
 async function isRailwayProjectLinked(backendPath) {

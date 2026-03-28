@@ -2,7 +2,7 @@
 import path from 'path';
 import { deployWithCommand, runCommandCapture } from './utils.js';
 
-function sanitizeProjectName(rawValue, fallback = 'offbyte-api') {
+function sanitizeProjectName(rawValue, fallback = 'offbyt-api') {
   const normalized = String(rawValue || '')
     .toLowerCase()
     .replace(/[^a-z0-9-]/g, '-')
@@ -30,7 +30,7 @@ async function checkWranglerLogin() {
 }
 
 function ensurePagesBackendScaffold(backendPath, projectName) {
-  const deployDir = path.join(backendPath, '.offbyte-cloudflare-pages');
+  const deployDir = path.join(backendPath, '.offbyt-cloudflare-pages');
   const workerFile = path.join(deployDir, '_worker.js');
   const indexFile = path.join(deployDir, 'index.html');
   const wranglerConfig = path.join(deployDir, 'wrangler.toml');
@@ -38,13 +38,13 @@ function ensurePagesBackendScaffold(backendPath, projectName) {
   fs.mkdirSync(deployDir, { recursive: true });
 
   if (!fs.existsSync(workerFile)) {
-    const workerTemplate = `const json = (status, body) => new Response(JSON.stringify(body), {\n  status,\n  headers: { 'content-type': 'application/json; charset=utf-8' }\n});\n\nexport default {\n  async fetch(request) {\n    const url = new URL(request.url);\n\n    if (request.method === 'GET' && url.pathname === '/') {\n      return json(200, {\n        success: true,\n        message: 'offbyte Cloudflare Pages backend is running'\n      });\n    }\n\n    if (request.method === 'GET' && url.pathname === '/health') {\n      return json(200, {\n        status: 'ok',\n        platform: 'cloudflare-pages',\n        timestamp: new Date().toISOString()\n      });\n    }\n\n    if (request.method === 'GET' && url.pathname === '/api/ping') {\n      return json(200, { success: true, data: 'pong' });\n    }\n\n    return json(404, { success: false, message: 'Route not found' });\n  }\n};\n`;
+    const workerTemplate = `const json = (status, body) => new Response(JSON.stringify(body), {\n  status,\n  headers: { 'content-type': 'application/json; charset=utf-8' }\n});\n\nexport default {\n  async fetch(request) {\n    const url = new URL(request.url);\n\n    if (request.method === 'GET' && url.pathname === '/') {\n      return json(200, {\n        success: true,\n        message: 'offbyt Cloudflare Pages backend is running'\n      });\n    }\n\n    if (request.method === 'GET' && url.pathname === '/health') {\n      return json(200, {\n        status: 'ok',\n        platform: 'cloudflare-pages',\n        timestamp: new Date().toISOString()\n      });\n    }\n\n    if (request.method === 'GET' && url.pathname === '/api/ping') {\n      return json(200, { success: true, data: 'pong' });\n    }\n\n    return json(404, { success: false, message: 'Route not found' });\n  }\n};\n`;
 
     fs.writeFileSync(workerFile, workerTemplate, 'utf8');
   }
 
   if (!fs.existsSync(indexFile)) {
-    const html = '<!doctype html><html><head><meta charset="utf-8"><title>offbyte API</title></head><body><h1>offbyte API</h1><p>Project: ' + projectName + '</p></body></html>\n';
+    const html = '<!doctype html><html><head><meta charset="utf-8"><title>offbyt API</title></head><body><h1>offbyt API</h1><p>Project: ' + projectName + '</p></body></html>\n';
     fs.writeFileSync(indexFile, html, 'utf8');
   }
 
@@ -95,10 +95,10 @@ async function ensurePagesProject(projectName, cwd) {
 
 export async function deployToCloudflareWorker(backendPath, options = {}) {
   let projectName = '';
-  let deployDir = path.join(backendPath, '.offbyte-cloudflare-pages');
+  let deployDir = path.join(backendPath, '.offbyt-cloudflare-pages');
 
   const preflight = async () => {
-    projectName = sanitizeProjectName(options.projectName || path.basename(backendPath), 'offbyte-api');
+    projectName = sanitizeProjectName(options.projectName || path.basename(backendPath), 'offbyt-api');
     const setup = ensurePagesBackendScaffold(backendPath, projectName);
     deployDir = setup.deployDir;
     await ensurePagesProject(projectName, deployDir);

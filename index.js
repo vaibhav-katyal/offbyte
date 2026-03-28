@@ -1,10 +1,10 @@
 /**
- * Offbyte - Hybrid Backend Generator
+ * Offbyt - Hybrid Backend Generator
  * 
  * Main entry point for programmatic usage
  * 
  * Usage:
- * import { offlineMode, runDoctor } from 'offbyte';
+ * import { offlineMode, runDoctor } from 'offbyt';
  * 
  * await offlineMode('/path/to/project');
  * await runDoctor();

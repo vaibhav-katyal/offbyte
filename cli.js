@@ -22,7 +22,7 @@ function parsePort(value) {
 }
 
 program
-  .name('offbyte')
+  .name('offbyt')
   .description('Hybrid Backend Generator - Offline + AI Powered')
   .version('1.0.0');
 
@@ -195,12 +195,12 @@ if (!process.argv.slice(2).length) {
   program.outputHelp();
   console.log(chalk.cyan('\nQuick Start:\n'));
   console.log(chalk.white('  Option 1 (Recommended):'));
-  console.log(chalk.gray('    offbyte generate                    # Generate + Auto-connect\n'));
+  console.log(chalk.gray('    offbyt generate                    # Generate + Auto-connect\n'));
   console.log(chalk.white('  Option 2 (Skip auto-connect):'));
-  console.log(chalk.gray('    offbyte generate --no-auto-connect  # Generate only\n'));
+  console.log(chalk.gray('    offbyt generate --no-auto-connect  # Generate only\n'));
   console.log(chalk.white('  Option 3 (Just connect):'));
-  console.log(chalk.gray('    offbyte connect [path]              # Auto-connect existing project\n'));
+  console.log(chalk.gray('    offbyt connect [path]              # Auto-connect existing project\n'));
   console.log(chalk.white('  Option 4 (Deploy live):'));
-  console.log(chalk.gray('    offbyte deploy [path]               # Deploy + auto-connect URLs\n'));
+  console.log(chalk.gray('    offbyt deploy [path]               # Deploy + auto-connect URLs\n'));
 }
 

@@ -6,7 +6,7 @@
 import mongoose from 'mongoose';
 import chalk from 'chalk';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/offbyte_app';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/offbyt_app';
 
 export const dbConfig = {
   uri: MONGODB_URI,

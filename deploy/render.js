@@ -30,7 +30,7 @@ function resolveRenderAssetSuffix() {
 async function fetchLatestRenderRelease() {
   const response = await fetch('https://api.github.com/repos/render-oss/cli/releases/latest', {
     headers: {
-      'User-Agent': 'offbyte-cli'
+      'User-Agent': 'offbyt-cli'
     }
   });
 
@@ -42,7 +42,7 @@ async function fetchLatestRenderRelease() {
 }
 
 function getRenderInstallPaths() {
-  const binDir = path.join(os.homedir(), '.offbyte', 'bin');
+  const binDir = path.join(os.homedir(), '.offbyt', 'bin');
   const executableName = process.platform === 'win32' ? 'render.exe' : 'render';
 
   return {
@@ -77,7 +77,7 @@ async function installRenderCliFromGithub() {
   }
 
   const { binDir, executablePath } = getRenderInstallPaths();
-  const tempRoot = path.join(os.tmpdir(), 'offbyte-render-cli');
+  const tempRoot = path.join(os.tmpdir(), 'offbyt-render-cli');
   const zipPath = path.join(tempRoot, targetAsset.name);
   const extractDir = path.join(tempRoot, `extract-${Date.now()}`);
 
@@ -87,7 +87,7 @@ async function installRenderCliFromGithub() {
 
   const archiveResponse = await fetch(targetAsset.browser_download_url, {
     headers: {
-      'User-Agent': 'offbyte-cli'
+      'User-Agent': 'offbyt-cli'
     }
   });
 

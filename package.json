@@ -1,0 +1,20 @@
+{
+  "name": "offbyt",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Code generation and deployment tool",
+  "main": "index.js",
+  "bin": {
+    "offbyt": "cli.js"
+  },
+  "scripts": {
+    "start": "node cli.js",
+    "dev": "node cli.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^13.0.6"
+  }
+}

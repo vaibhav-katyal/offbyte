@@ -62,7 +62,7 @@ const BACKEND_ALIASES = {
 export async function runDeploymentFlow(projectPath, options = {}) {
   const resolvedProjectPath = path.resolve(projectPath || process.cwd());
 
-  console.log(chalk.cyan('\noffbyte Deployment\n'));
+  console.log(chalk.cyan('\noffbyt Deployment\n'));
 
   const selection = await resolveProviders(options);
   const frontendPath = detectFrontendPath(resolvedProjectPath);
@@ -209,7 +209,7 @@ function buildDefaultRailwayProjectName() {
     .replace(/[-:TZ]/g, '')
     .slice(0, 12);
 
-  return `offbyte-${stamp}`;
+  return `offbyt-${stamp}`;
 }
 
 async function resolveBackendOptions(backendProvider, options = {}, { interactive = false } = {}) {
