@@ -1,0 +1,22 @@
+{
+  "requiredContract": [
+    "database",
+    "framework",
+    "auth",
+    "resources"
+  ],
+  "minResources": 1,
+  "requireAuth": true,
+  "requiredSecurity": [
+    "validation",
+    "rateLimit",
+    "helmet",
+    "cors"
+  ],
+  "smoke": {
+    "checkHealth": true,
+    "checkResourceList": true,
+    "maxResources": 10,
+    "timeoutMs": 45000
+  }
+}
